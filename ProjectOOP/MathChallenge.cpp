@@ -6,7 +6,7 @@ using namespace std;
 
 MathChallenge::MathChallenge() : Game("Math Challenge") {}
 
-void MathChallenge::play() {
+bool MathChallenge::play() {
     srand(time(0));
     int a = rand() % 100, b = rand() % 100;
     cout << "Solve: " << a << " + " << b << " = ?" << endl;
@@ -14,8 +14,10 @@ void MathChallenge::play() {
     cin >> answer;
     if (answer == a + b) {
         cout << "Correct! You earned a Math Badge.\n";
+		return true;
     }
     else {
         cout << "Incorrect. Try again next time.\n";
+		return false;
     }
 }

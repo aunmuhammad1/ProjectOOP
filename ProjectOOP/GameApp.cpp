@@ -63,8 +63,9 @@ void GameApp::playGame() {
 
     Game* game = games[rand() % 5]; // Select a random game
     cout << "Playing " << typeid(*game).name() << endl;
-    game->play(); // Play the selected game
-    currentPlayer->addBadge(game->getTitle());
+    if (game->play()) {
+        currentPlayer->addBadge(game->getTitle());
+    }
     savePlayers(); // Save badges earned
 }
 

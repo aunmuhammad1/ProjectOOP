@@ -8,7 +8,7 @@
 class Anagrams : public Game {
 public:
     Anagrams();
-    void play() override;
+    bool play() override;
 
 private:
     std::vector<std::string> wordList;

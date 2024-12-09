@@ -10,7 +10,7 @@ RockPaperScissors::RockPaperScissors() : Game("Rock Paper Scissors") {
     srand(time(0)); // Seed the random number generator
 }
 
-void RockPaperScissors::play() {
+bool RockPaperScissors::play() {
     string playerChoice;
     cout << "Choose Rock, Paper, or Scissors: ";
     cin >> playerChoice;
@@ -20,7 +20,7 @@ void RockPaperScissors::play() {
 
     if (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors") {
         cout << "Invalid choice. Please choose Rock, Paper, or Scissors.\n";
-        return;
+        return false;
     }
 
     string computerChoice = getComputerChoice();
@@ -28,6 +28,12 @@ void RockPaperScissors::play() {
 
     string result = getResult(playerChoice, computerChoice);
     cout << result << endl;
+    if (result == "You win!") {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 string RockPaperScissors::getComputerChoice() {

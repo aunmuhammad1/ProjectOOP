@@ -6,7 +6,7 @@
 class RockPaperScissors : public Game {
 public:
     RockPaperScissors();
-    void play() override;
+    bool play() override;
 
 private:
     string getComputerChoice();

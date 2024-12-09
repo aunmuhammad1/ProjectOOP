@@ -7,7 +7,7 @@
 class MathChallenge : public Game {
 public:
     MathChallenge();
-    void play() override;
+    bool play() override;
 };
 
 #endif // MATH_CHALLENGE_H

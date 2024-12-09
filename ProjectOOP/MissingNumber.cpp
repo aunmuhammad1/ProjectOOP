@@ -10,7 +10,7 @@ MissingNumber::MissingNumber() : Game("Missing Number Challenge") {
     srand(time(0)); // Seed random number generator
 }
 
-void MissingNumber::play() {
+bool MissingNumber::play() {
     vector<int> sequence = generateSequence(10); // Generate a sequence of 10 numbers
     int missingIndex = rand() % sequence.size();
     int missingNumber = sequence[missingIndex];
@@ -29,9 +29,12 @@ void MissingNumber::play() {
 
     if (answer == missingNumber) {
         cout << "Correct! You earned a Missing Number Badge.\n";
+
+        return true;
     }
     else {
         cout << "Incorrect. The missing number was: " << missingNumber << "\n";
+        return false;
     }
 }
 

@@ -8,7 +8,7 @@
 class MissingNumber : public Game {
 public:
     MissingNumber();
-    void play() override;
+    bool play() override;
 
 private:
     std::vector<int> generateSequence(int size);

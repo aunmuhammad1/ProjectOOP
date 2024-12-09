@@ -9,7 +9,7 @@ NumberGuessing::NumberGuessing() : Game("Number Guessing Game") {
     srand(time(0)); // Seed the random number generator
 }
 
-void NumberGuessing::play() {
+bool NumberGuessing::play() {
     int min = 1, max = 100;
     int correctNumber = generateRandomNumber(min, max);
     int guess;
@@ -25,7 +25,7 @@ void NumberGuessing::play() {
         if (guess == correctNumber) {
             cout << "Congratulations! You guessed the correct number: " << correctNumber << endl;
             cout << "You earned a Number Guessing Badge!\n";
-            return;
+            return true;
         }
         else {
             giveHint(guess, correctNumber);
@@ -35,6 +35,7 @@ void NumberGuessing::play() {
     }
 
     cout << "Sorry, you've run out of attempts. The correct number was: " << correctNumber << endl;
+	return false;
 }
 
 int NumberGuessing::generateRandomNumber(int min, int max) {

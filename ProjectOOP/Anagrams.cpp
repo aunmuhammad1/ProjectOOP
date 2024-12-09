@@ -11,7 +11,7 @@ Anagrams::Anagrams() : Game("Anagrams") {
     initializeWordList(); // Populate the word list
 }
 
-void Anagrams::play() {
+bool Anagrams::play() {
     string word = getRandomWord();
     string scrambled = word;
     random_shuffle(scrambled.begin(), scrambled.end());
@@ -23,9 +23,11 @@ void Anagrams::play() {
 
     if (answer == word) {
         cout << "Correct! You earned an Anagram Badge.\n";
+		return true;
     }
     else {
         cout << "Incorrect. The correct word was: " << word << endl;
+		return false;
     }
 }
 

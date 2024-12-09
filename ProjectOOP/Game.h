@@ -8,7 +8,7 @@ protected:
     string title;
 public:
     Game(string t) : title(t) {}
-    virtual void play() = 0;
+    virtual bool play() = 0;
     virtual ~Game() {}
     string getTitle() { return title; }
 };

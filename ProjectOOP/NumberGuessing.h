@@ -6,7 +6,7 @@
 class NumberGuessing : public Game {
 public:
     NumberGuessing();
-    void play() override;
+    bool play() override;
 
 private:
     int generateRandomNumber(int min, int max);
